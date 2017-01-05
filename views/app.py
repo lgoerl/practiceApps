@@ -11,9 +11,9 @@ def index():
     return render_template('index.html')
 
 SCOTCHES = {
-	'scotch1' : {'name':'Macallan 12','cost':'$50'},
-	'scotch2' : {'name':'Chivas Regal Royal Salute','cost':'$10000'},
-	'scotch3' : {'name':'Glenfiddich 1937', 'cost':'$20000'}
+	'scotch1' : {'name':'Macallan 12','cost':50},
+	'scotch2' : {'name':'Chivas Regal Royal Salute','cost':10000},
+	'scotch3' : {'name':'Glenfiddich 1937', 'cost':20000}
 }
 
 parser = reqparse.RequestParser()
@@ -45,7 +45,7 @@ class scotch(Resource):
 
 class scotchList(Resource):
 	def get(self):
-		return SCOTCHES 
+		return SCOTCHES.values()
 
 	def post(self):
 		args = parser.parse_args()

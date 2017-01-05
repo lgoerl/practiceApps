@@ -1,5 +1,10 @@
 // app.js
-var routerApp = angular.module('routerApp', ['ui.router']);
+
+
+// Main app
+
+var routerApp = angular.module('routerApp', ['ui.router', 'routerApp.services']);
+
 
 routerApp.config(function($stateProvider, $urlRouterProvider) {
     
@@ -67,7 +72,8 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 
 
 
-// define the scotch controller that we call up in the about state
+// Controllers
+
 routerApp.controller('scotchController', function($scope) {
     
     $scope.message = 'test';
